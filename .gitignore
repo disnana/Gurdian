@@ -1,0 +1,4 @@
+*.pyc
+gurdian/.idea/
+obfsys.py
+obf all.py
