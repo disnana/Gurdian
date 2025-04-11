@@ -31,6 +31,7 @@ module = gurdian.Security(
     detect_vm=True,
     detect_sandbox=True,
     detect_debugger_attach=True,
+    # 動かない場合は以下を無効化
     check_titles=False,
     is_debugger_present=True,
     check_remote_debugger=True,
