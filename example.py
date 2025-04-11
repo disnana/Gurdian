@@ -1,6 +1,6 @@
 import time
 import sys
-from module import gurdian
+import gurdian
 
 
 def detected():
@@ -18,7 +18,8 @@ def startup_check():
         module.parallels_check() or
         module.is_screen_small() or
         module.check_for_kvm() or
-        module.parent_anti_debug() or
+# 動作しない場合は以下を無効化
+#        module.parent_anti_debug() or
         module.detect_vm() or
         module.detect_sandbox()):
         module.force_kill()
@@ -30,7 +31,7 @@ module = gurdian.Security(
     detect_vm=True,
     detect_sandbox=True,
     detect_debugger_attach=True,
-    check_titles=True,
+    check_titles=False,
     is_debugger_present=True,
     check_remote_debugger=True,
     kill_bad_processes=True,
